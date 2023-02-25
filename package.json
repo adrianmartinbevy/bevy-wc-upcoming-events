@@ -3,18 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/my-element.es.js",
+  "main": "dist/bevy-wc-upcoming-events.umd.js",
   "exports": {
-    ".": "./dist/my-element.es.js"
+    ".": "./dist/bevy-wc-upcoming-events.umd.js"
   },
-  "types": "types/my-element.d.ts",
+  "types": "types/bevy-upcoming-events.d.ts",
   "files": [
     "dist",
     "types"
   ],
   "scripts": {
-    "dev": "vite -d --force",
-    "build": "tsc && vite build"
+    "dev": "vite",
+    "build": "rm -rf dist && tsc && vite build"
   },
   "dependencies": {
     "@lit-labs/observers": "^1.1.0",

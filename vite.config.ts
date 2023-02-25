@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command, mode }) => 
+{
+  return {
   server: {
     watch: {
       usePolling: true,
@@ -10,10 +12,13 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/bevy-upcoming-events.ts',
-      formats: ['es'],
+      formats: ['umd'],
+      name: 'BevyUpcomingEvents',
+      fileName: (format) => `bevy-wc-upcoming-events.${format}.js`,
     },
     rollupOptions: {
-      external: /^lit/,
+      external: mode === "production" ? "" : /^lit/,
     },
   },
+}
 })
