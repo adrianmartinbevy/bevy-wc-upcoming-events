@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bevy Upcoming Events WC Demo</title>
+    <script type="module" src="src/bevy-upcoming-events.ts"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        color: #555;
+      }
+      h2 {
+        margin: 1rem 0;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #333;
+        background-color: antiquewhite;
+      }
+      #ace::part(container) {
+        border: 1px solid #f00;
+        border-radius: 6px;
+        background-color: #66a9d6;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+      }
+      #ace::part(event-card-container) {
+        padding: 15px 10px;
+        background-color: rgba(0  , 0, 255, 0.03);
+      }
+      #ace::part(event-card-image) {
+        border-radius: 16px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        background-color: #fff;
+      }
+      #ace::part(event-card) {
+        border: 0;
+        background-color: blue;
+        border-radius: 0;
+        color: #fff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;      }
+
+      #demo::part(event-card-container) {
+        padding: 10px 10px 0 0;
+        font-family: monospace;
+        background-color: rgba(0  , 0, 255, 0.03);
+      }
+
+      #demo::part(event-card) {
+        border: 0;
+        border-radius: 0;
+        background: rgb(255,255,0);
+        background: linear-gradient(190deg, rgba(0,0,255,1) 10%, rgba(0,255,0,1) 30%, rgba(255,255,0,0) 60%);
+        box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 3px -3px 0px -3px, rgb(31, 193, 27) 3px -3px, rgb(255, 255, 255) 6px -6px 0px -3px, rgb(255, 217, 19) 6px -6px;
+        color: orange;
+      }
+
+      #demo::part(event-card) .title {
+        color: #000;
+      }
+
+      #demo::part(event-card-image) {
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.219);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo instance</h2>
+    <bevy-upcoming-events id="demo" baseUrl="https://demo.bevylabs.com/"></bevy-upcoming-events>
+    <h2>GDG instance</h2>
+    <bevy-upcoming-events id="gdg" eventCardMinWidth="250" baseUrl="https://gdsc.community.dev/"></bevy-upcoming-events>
+    <h2>atlassian instance</h2>
+    <bevy-upcoming-events id="ace" eventCardMinWidth="300" baseUrl="https://ace.atlassian.com/"></bevy-upcoming-events>
+  </body>
+</html>
