@@ -9,7 +9,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: 'src/my-element.ts',
+      entry: 'src/bevy-upcoming-events.ts',
       formats: ['es'],
     },
     rollupOptions: {
